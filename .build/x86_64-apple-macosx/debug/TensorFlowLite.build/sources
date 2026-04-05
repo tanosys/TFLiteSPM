@@ -1,0 +1,9 @@
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Delegate.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Interpreter.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/InterpreterError.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Model.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/QuantizationParameters.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/SignatureRunner.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/SignatureRunnerError.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Tensor.swift
+/private/tmp/TFLiteSPM/Sources/TensorFlowLite/TensorFlowLite.swift

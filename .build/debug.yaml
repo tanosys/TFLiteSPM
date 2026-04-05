@@ -1,0 +1,50 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "TensorFlowLite-x86_64-apple-macosx-debug.module": ["<TensorFlowLite-x86_64-apple-macosx-debug.module>"]
+  "main": ["<TensorFlowLite-x86_64-apple-macosx-debug.module>"]
+  "test": ["<TensorFlowLite-x86_64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/private/tmp/TFLiteSPM/Frameworks/TensorFlowLiteC.xcframework/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/private/tmp/TFLiteSPM/Sources/TensorFlowLite/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Delegate.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Interpreter.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/InterpreterError.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Model.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/QuantizationParameters.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/SignatureRunner.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/SignatureRunnerError.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Tensor.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/TensorFlowLite.swift"]
+    outputs: ["/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/sources"]
+    description: "Write auxiliary file /private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/sources"
+
+  "/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/swift-version-76467B304FA4BECE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/swift-version-76467B304FA4BECE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/swift-version-76467B304FA4BECE.txt"
+
+  "<TensorFlowLite-x86_64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Delegate.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Interpreter.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/InterpreterError.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Model.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/QuantizationParameters.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/SignatureRunner.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/SignatureRunnerError.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Tensor.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/TensorFlowLite.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/Modules/TensorFlowLite.swiftmodule"]
+    outputs: ["<TensorFlowLite-x86_64-apple-macosx-debug.module>"]
+
+  "C.TensorFlowLite-x86_64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Delegate.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Interpreter.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/InterpreterError.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Model.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/QuantizationParameters.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/SignatureRunner.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/SignatureRunnerError.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/Tensor.swift","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/TensorFlowLite.swift","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/swift-version-76467B304FA4BECE.txt","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/sources"]
+    outputs: ["/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Delegate.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Interpreter.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/InterpreterError.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Model.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/QuantizationParameters.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/SignatureRunner.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/SignatureRunnerError.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/Tensor.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/TensorFlowLite.swift.o","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/Modules/TensorFlowLite.swiftmodule"]
+    description: "Compiling Swift Module 'TensorFlowLite' (9 sources)"
+    args: ["/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","TensorFlowLite","-emit-dependencies","-emit-module","-emit-module-path","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/Modules/TensorFlowLite.swiftmodule","-output-file-map","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/output-file-map.json","-parse-as-library","-incremental","-c","@/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/sources","-I","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j16","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/include/TensorFlowLite-Swift.h","-swift-version","5","-plugin-path","/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk","-F","/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-target","arm64-apple-ios14.0-simulator","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk","-Xcc","-F","-Xcc","/Applications/Xcode-26.4.0-Release.Candidate.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","tflitespm"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/private/tmp/TFLiteSPM/Frameworks/TensorFlowLiteC.xcframework/","/private/tmp/TFLiteSPM/Sources/TensorFlowLite/","/private/tmp/TFLiteSPM/Package.swift","/private/tmp/TFLiteSPM/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

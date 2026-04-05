@@ -1,0 +1,3 @@
+module TensorFlowLite {
+    header "/private/tmp/TFLiteSPM/.build/x86_64-apple-macosx/debug/TensorFlowLite.build/include/TensorFlowLite-Swift.h"
+}

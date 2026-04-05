@@ -1,0 +1,31 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "tflitespm",
+          "kind" : "root",
+          "location" : "/private/tmp/TFLiteSPM",
+          "name" : "TFLiteSPM"
+        },
+        "path" : "/private/tmp/TFLiteSPM/Frameworks/TensorFlowLiteC.xcframework",
+        "source" : {
+          "type" : "local"
+        },
+        "targetName" : "TensorFlowLiteC"
+      }
+    ],
+    "dependencies" : [
+
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}
